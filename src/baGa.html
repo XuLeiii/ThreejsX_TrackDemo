@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function c(res, rej) {
+    //   console.log("我是promise的回调函数");
+    //   let test = "成功的数据"
+    //   res(test)
+    // }
+    // //
+    // function promise(c) {
+    //   console.log("我是promise");
+    //   let resolve = function (data) {
+    //     returndata = data
+    //   }
+    //   let reject = function (data) {
+    //     returndata = data
+    //   }
+    //   //promise处理传入回调函数
+    //   // c(resolve, reject)
+    //   this.then = function (callback) {
+    //     resolve(1)
+    //     console.log("我是THEN");
+    //     function ddd(data) {
+    //       console.log("data", data);
+    //     }
+    //     ddd()
+    //   }
+    // }
+    // let test = new promise(c)
+    // test.then()
+    //promise里会有个参数接收我的这个回调函数
+    //promise里面还有两个写好的函数resolve和reject作为实参传入回调函数的参数中去
+    async function a() {
+      await new Promise((resolve) => {
+        console.log(1111);
+        resolve();
+      });
+      console.log(2);
+    }
+    console.log(3);
+    a()
+    const p1 = new Promise((resolve, reject) => {
+      console.log('create a promise');
+      resolve('成功了');
+    })
+    console.log("after new promise");
+    const p2 = p1.then(data => {
+      console.log(data)
+      // throw new Error('失败了')
+    })
+  </script>
+</body>
+
+</html>
